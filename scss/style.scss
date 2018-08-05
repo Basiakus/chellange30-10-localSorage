@@ -1,0 +1,13 @@
+ul.orders {
+	list-style-type: none;
+	input {
+		+label:before {
+			content: "☐";
+		}
+		&:checked {
+			+label:before {
+			content: "☑";
+			}
+		}
+	}
+}

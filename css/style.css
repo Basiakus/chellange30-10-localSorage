@@ -1,0 +1,9 @@
+@charset "UTF-8";
+ul.orders {
+  list-style-type: none; }
+  ul.orders input + label:before {
+    content: "☐"; }
+  ul.orders input:checked + label:before {
+    content: "☑"; }
+
+/*# sourceMappingURL=style.css.map */
