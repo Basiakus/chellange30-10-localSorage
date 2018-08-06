@@ -1,13 +1,73 @@
-ul.orders {
-	list-style-type: none;
-	input {
-		+label:before {
-			content: "☐";
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; 
+}
+body {
+	box-sizing: border-box;
+	background:url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+	background-size:cover;
+	min-height:100vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+	.app {
+		padding: 2%;
+		min-width: 30%;
+		background: rgba(255,255,255,0.95);
+		box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+		h2 {
+			text-align: center;
+			margin: 0;
+			font-weight: 200;
 		}
-		&:checked {
-			+label:before {
-			content: "☑";
+		ul.orders {
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			list-style: none;
+			li {
+				border-bottom: 1px solid rgba(0,0,0,0.2);
+				padding: 10px;
+				font-weight: 100;
+				display: flex;
+			}
+			label {
+				flex:1;
+				cursor: pointer;
+				z-index: 1;
+				position: absolute;
+			}
+			input {
+				margin-top: 5px;
+				margin-right: 10px;
+				opacity: 0;
+				z-index: 2;
+				+ label:before {
+					content: "☐";
+					margin-right: 10px;
+				}
+				&:checked {
+					+ label:before {
+					content: "☑";
+					}
+				}
 			}
 		}
+		.appForm input {
+			padding:10px;
+			outline:0;
+			border:1px solid rgba(0,0,0,0.1);
+		}
 	}
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        .app{
+        	width: 90%;
+        }
+    }
 }
